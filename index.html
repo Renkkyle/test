@@ -1,39 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <link rel="stylesheet" href="form.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-    <title>ReBlog - About</title>
+:root{
+    --color-white:#f3f3f3;
+    --color-darkblue:#796ec8;
+    --color-darkblue-alpha:rgba(13, 138, 187, 0.8);
+    --color-green:#21eb6e;
+}
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--color-white);
+    margin: 0;
+}
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--color-darkblue);
+    background-image: linear-gradient(215deg,rgba(75, 113, 179, 0.8),rgba(124, 192, 147, 0.8)),url(https://jmc.edu.ph/wp-content/uploads/2020/06/IMG_00741-scaled-1-1080x675.jpg?fbclid=IwAR09HouAwdtbsW9yRWSbqJbLB5bLnRG8VicRj9vfk1UPHyfPJCMlU_rVyBU);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#title{
+    color: var(--color-green);
+    font-weight: 600;
+    
+    
+}
+h1{
+    font-weight: 400;
+    line-height: 1.2;
+}
+p{
+    font-size: 1.125rem;
+}
+h1,p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+label{
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+input,button,select,textarea{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    
+}
+.container{
+    width: 100%;
+    margin: 3.125rem auto 0 auto;
+    padding:1.8rem 1rem;
+}
 
-    <!-- Theme CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+.header{
+    padding: 0 0.625rem;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+#description{
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+}
+.clue{
+    margin-left: 0.25rem;
+    font-size: 0.9rem;
+    color: #e4e4e4;
+}
+#quest{
+    color: rgb(241, 191, 98);
+    font-size: 1.5rem;
+}
+form{
+    background: var(--color-darkblue-alpha);
+    border-radius: 0.25rem;
+}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+@media (min-width: 480px){
+    form{
+        padding: 2.5rem;
+    }
+}
+.form-group{
+    margin: 0 auto 1.25rem auto;
+    padding: 0.25rem;
+}
+.formControl{
+    display: block;
+    width: 100%;
+    height: 2.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+.formControl:focus{
+    border-color:blue;
+    outline: 0;
+    box-shadow:0 0 0 0.2rem rgba(0,123,255,0.25)
+}
+.inputRadio,
+.checkbox
+{
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
 
+}
+.textarea{
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.15rem;
+    outline: none;
+    border-color: blue;
+    border-radius: 5px;
+}
+.btn{
+    display: block;
+    width: 100%;
+    padding:0.5rem 0.75rem;
+    background: var(--color-green);
+    color: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: blue;
+    border: none;
+}
+
+@media (min-width:576px){
+    .container{
+        max-width: 540px;
+    }
+}
+@media (min-width:800px){
+    .container{
+        max-width: 760px;
+    }
+}
+    </style>
+    <title>F2F Survey Form</title>
 </head>
-
 <body>
-
-    <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,86 +209,109 @@
         </div>
         <!-- /.container -->
     </nav>
+    <div class="container ">
+        <header class="header">
+            <h1 id="title">
+                Face to Face Survey Form
+            </h1>
+            <p id="description">
+                Thank you for taking the time to help us to answer the questions
+            </p>
+        </header>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe3sPepvTDQD6XMxeHuFBcPaFgckpgEvBO_Tcf0hb0ZqV90ag/formResponse" id="survey-form">
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/homex.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Home</h1>
-                        <hr class="small">
-                        <span class="subheading">This is what I do.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+            
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Hello! I am Ren, I do reviews about anything that i come across, This website is perfect for anyone looking for a reference about a certain item, anime or games,</p>
-                <p>Have you ever looked at a game and wonder, "is this worth my time and money?, i am here to help you decide wheter it is, however my review is merely based on my opinion and should only be taken so.</p>
-                <p>This is so that you can read a little bit about a game or an item before purchasing it or maybe reading a little bit about a movie or an anime before watching it.</p>
+            <!-- Type Email section -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="entry.1521493566" id="email" class="formControl" placeholder="Enter your Email" required>
             </div>
-        </div>
+            <!-- end of Email section -->
+
+            <!-- Name section -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="entry.1610437831" id="name" class="formControl" placeholder="Enter your name" required>
+            </div>
+            <!-- end of text section -->
+
+            <!-- Student ID section -->
+            <div class="form-group">
+                <label for="studntID">Student ID</label>
+                <input type="number" name="entry.828436015" id="studntID" class="formControl" placeholder="Enter your Student ID" required>
+            </div>
+            <!-- end of text section -->
+
+            <!-- Course section -->
+            <div class="form-group">
+                <label for="course">Course</label>
+                <input type="text" name="entry.21183418" id="course" class="formControl" placeholder="Enter your Course" required>
+            </div>
+            <!-- end of text section -->
+
+            <!-- Type Age section -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="entry.573982668" id="age" class="formControl" placeholder="Enter your Age" required>
+            </div>
+            <!-- end of Number section -->
+
+            <!-- Type Number section -->
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="number" name="entry.699449960" id="phone" class="formControl" placeholder="Enter your phone number" required>
+            </div>
+            <!-- end of Number section -->
+
+            <!-- CITY section -->
+            <div class="form-group">
+                <label for="city">Current city you lived in</label>
+                <input type="text" name="entry.687272801" id="city" class="formControl" placeholder="Enter your CITY" required>
+            </div>
+            <!-- end of text section -->
+
+            
+
+            <!-- Gender button section -->
+            <div class="form-group">
+                <label for="gender">Gender (Male, Female)</label>
+                <input type="text" name="entry.978823229" id="gender" class="formControl" placeholder="Enter your Gender" required>
+            </div>
+            <!-- end of gender button -->
+
+            <!-- Year button section -->
+            <div class="form-group">
+                <label for="year">Year level  (First, Second, Third, Fourrth, Fifth)</label>
+                <input type="text" name="entry.1518979431" id="year" class="formControl" placeholder="Enter your Year Level" required>
+            </div>
+
+            <!-- end of Year button -->
+            <!-- Vaccination button section -->
+
+            <div class="form-group">
+                <label for="vacx">Vaccinated? (Yes, No)</label>
+                <input type="text" name="entry.410838558" onkeydown="return /[a-z, ]/i.test(event.key)"
+                onblur="if (this.value == '') {this.value = '';}"
+                onfocus="if (this.value == '') {this.value = '';}" style="text-transform:uppercase" id="vacx" class="formControl" placeholder="Enter Yes or No" required>
+            </div>
+            
+            <!-- end of vaccination button -->
+            <!-- F2F Question section -->
+            <div class="form-group">
+                <label for="f2f">Agree to Face to Face class? (Yes, No)</label>
+                <input type="text" name="entry.1788298564" onkeydown="return /[a-z, ]/i.test(event.key)"
+                onblur="if (this.value == '') {this.value = '';}"
+                onfocus="if (this.value == '') {this.value = '';}" style="text-transform:uppercase" id="vacx" class="formControl" placeholder="Enter Yes or No" required>
+            </div>
+
+            <!-- end of F2F Question button -->
+
+            
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn">Submit Form</button>
+            </div>
+        </form>
     </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="no account">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/Grim12">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="no account">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; ReBlog 2021</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
-
 </body>
-
 </html>
